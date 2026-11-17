@@ -229,3 +229,20 @@ API-токену права на вебхуки, поведение при од�
 | `VIKUNJA_SERVICE_PUBLICURL` | `docker inspect` | было `http://localhost:3456/` → в CalDAV-настройках и в ссылках фигурировал localhost, недостижимый с телефона. **Исправлено** на `http://100.121.145.104:3456/`, контейнер пересоздан, `frontend_url` в `/api/v2/info` теперь верный |
 | Ограничение попыток | документация Vikunja | с версии 0.24 неудачная аутентификация CalDAV ограничена **10 попыток в минуту на IP**; после лимита 401 отдаётся даже с верными данными |
 | Создание токена через API | `POST /api/v2/tokens` | **401** — текущий токен не имеет права создавать токены; CalDAV-токен создаётся только в UI (Settings → CalDAV) |
+
+### CalDAV Vikunja: рабочая связка проверена (2026-11-17)
+
+Проверено с сервера `curl -X PROPFIND -u "Blesk:<CalDAV-токен>"` (токен создан
+пользователем в Settings → CalDAV, в документах не приводится).
+
+| Проверка | Результат |
+|---|---|
+| `PROPFIND /dav/principals/Blesk/` | **207 Multi-Status** — авторизация проходит |
+| `calendar-home-set` | `/dav/projects` |
+| `PROPFIND /dav/projects/` | `/dav/projects/1` (Inbox), `/dav/projects/-2` («My Open Tasks») |
+| Компоненты проекта 1 | `VCALENDAR` + **`VTODO`** — задачи синхронизируются |
+| Задачи в Inbox | 2 файла `.ics` |
+| API-токен без группы `caldav` | 401 — не подходит |
+
+Итог для клиента: URL `http://100.121.145.104:3456/dav/principals/Blesk/`,
+имя `Blesk`, пароль — CalDAV-токен.
