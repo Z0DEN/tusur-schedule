@@ -201,3 +201,21 @@ API-токену права на вебхуки, поведение при од�
 пуст — в горизонте планирования одно событие. Чтение реализуемо; наполненность —
 вопрос к пользователю (возможно, личные события лежат в другом аккаунте или в
 локальном календаре телефона).
+
+### Android-клиент задач для Vikunja (проверено 2026-11-17)
+
+| Проверка | Как | Результат |
+|---|---|---|
+| Tasks.org: что платно | `tasks.org/pricing/` | бесплатный уровень — только «popular cloud services»; **«Self-hosted synchronization with DAVx⁵, CalDAV, and EteSync»** — в платном: name-your-price от $0.99 (спонсорство на GitHub — $1/год), подписка $2.49/мес / $29.99/год. Оценка пользователя «платное» верна |
+| jtx Board: лицензия и свежесть | F-Droid `at.techbee.jtx`, GitHub `TechbeeAT/jtxBoard` | GPL-3.0; F-Droid 2.17.03.ose (06.10.2026); `versionName = 2.17.04`, ветка `develop`, push 16.11.2026 — жив |
+| jtx Board: Pro в F-Droid-сборке | `app/src/ose/java/at/techbee/jtx/flavored/BillingManager.kt` | `override var isProPurchased: LiveData<Boolean> = MutableLiveData(true) // always true for OSE flavor` — в сборке F-Droid **все Pro-функции открыты бесплатно** |
+| jtx Board: Pro в Play-сборке | `app/src/gplay/.../BillingManager.kt` | Google Billing, товар `IN_APP_PRODUCT_PRO = "adfree"`, разовая покупка; README: Play-Pro «enables editing options for remote entries» |
+| jtx Board: два времени у задачи | `ui/detail/DetailsCardDates.kt` | есть и `dtstart`, и `due`, у каждого своя таймзона (`dtstartTimezone`, `dueTimezone`), поля включаются флагами `enableDtstart` / `enableDue`, есть валидация `due_date_before_dtstart` → блок 19:20–20:20 представим |
+| jtx Board: остальные поля | файлы `DetailsCard*` | категории, приоритет/классификация/статус, напоминания (`DetailsCardAlarms`), подзадачи, вложения, комментарии, участники, повторения, коллекции |
+| jtx Board: русский | F-Droid/репозиторий (`values-ru`) | есть |
+| DAVx⁵: цена | `davx5.com`, F-Droid `at.bitfire.davdroid` | GPL-3.0; на F-Droid **бесплатно** (сборка из исходников, свой ключ), в Google Play — платно; 4.5.21-ose (18.10.2026) |
+| Fossify Calendar | F-Droid, issue FossifyOrg/Calendar#36 | задачи **не** синхронизируются по CalDAV (открытый запрос) |
+| OpenTasks | F-Droid `org.dmfs.opentasks` | пакета на F-Droid **нет** (404); последний релиз 1.4.2 от 21.03.2021 — проект стоит |
+
+Вывод: связка **DAVx⁵ + jtx Board** закрывает задачу бесплатно и полностью
+открытым кодом; платить за CalDAV не нужно.
