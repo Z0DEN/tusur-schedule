@@ -57,7 +57,7 @@
 | Не работает | `/api/v1/dav/…` → 404 (в документации Vikunja путь старый) |
 | Токен | **ещё не создан**; MCP-токен для CalDAV не подходит (проверено: `PROPFIND` → Unauthorized) |
 | Рабочие клиенты (docs Vikunja) | **Tasks.org**, OpenTasks + DAVx⁵, Evolution, Korganizer, Apple Reminders (iOS, 2.2.0+) |
-| Что выбрать бесплатно | **DAVx⁵ + jtx Board** (обе GPL-3.0, на F-Droid бесплатны). Tasks.org берёт деньги именно за self-hosted sync по CalDAV; OpenTasks стоит с 2021 и с F-Droid удалён. Проверки — `verified-facts.md` |
+| Решение | **DAVx⁵ + jtx Board** (обе GPL-3.0, на F-Droid бесплатны; в сборке F-Droid у jtx Board Pro открыт). Tasks.org не берём — self-hosted sync по CalDAV у него платный; OpenTasks стоит с 2021 и с F-Droid удалён. Проверки — `verified-facts.md` |
 | Нерабочий | Thunderbird 68 |
 | Ограничения CalDAV | канбан-колонки и вложения не синхронизируются; HTML-описания приезжают текстом |
 | Напоминания | держать в одном месте — иначе дубли Vikunja + клиент |
