@@ -13,3 +13,7 @@ fixtures/
 *.url
 *.token
 .env
+
+# данные Vikunja (личные задачи, вложения) — не в git
+db/
+files/
