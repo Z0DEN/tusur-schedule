@@ -63,3 +63,45 @@
 - `github.com/Lican1907/tusur-schedule` — Python: парсер расписания → `.ics` на
   GitHub Pages + синк в Google Calendar + Telegram-бот (проверено по README/коду).
 - `github.com/Keisha2112/tusur-timetable` — Android-приложение с расписанием.
+
+## 2026-11-17, вечер — Vikunja, MCP, CalDAV, переименование
+
+### Vikunja в Docker
+
+| Проверка | Команда | Результат |
+|---|---|---|
+| Контейнер | `docker ps` | `laughing_yonath`, `vikunja/vikunja`, `Up`, `0.0.0.0:3456->3456/tcp` |
+| Версия и флаги | `curl /api/v1/info` | `v2.8.0`, `caldav_enabled: true`, `frontend_url: http://localhost:3456/`, `max_file_size 20MB` |
+| Миграции и БД | `docker logs` | SQLite `/db/vikunja.db`, миграции прошли, Pro отключён (нет ключа) |
+| CalDAV-эндпоинт | `curl /dav/`, `/dav/principals/` | **401** — живой, ждёт токен |
+| Старый путь | `curl /api/v1/dav/principals/Blesk/` | **404** (в docs Vikunja путь устарел) |
+| MCP-эндпоинт | `curl -X GET /api/v2/mcp` | **405** — POST-эндпоинт на месте |
+| Регистрация | `POST /api/v1/register {}` | `code 1004` «specify username and password» — открыта |
+| Автозапуск | `systemctl is-enabled docker` + `docker update --restart unless-stopped` | `docker.service` = enabled; политика контейнера стала `unless-stopped` |
+| Данные вне git | `git status` до/после `.gitignore` | было `?? db/` → добавлены `db/`, `files/`, дерево чистое |
+
+### MCP Vikunja
+
+| Проверка | Результат |
+|---|---|
+| Запись в `~/.config/opencode/opencode.jsonc` | сервер `vikunja`, `type: remote`, `url: http://127.0.0.1:3456/api/v2/mcp`, `Authorization: Bearer tk_…`; права **600**, бэкап `.bak-vikunja` |
+| `initialize` | `HTTP 200`, `text/event-stream`, `protocolVersion 2025-06-18` |
+| `tools/list` | **27 инструментов** (`projects_*`, `tasks_*`, `labels_*`, `task_assignees_*`, `task_comments_*`, `filter_syntax`, `find_action`/`do_action`) |
+| Живой вызов | `projects_list` → проект `Inbox` (id 1), владелец `Blesk` |
+
+### CalDAV
+
+| Проверка | Результат |
+|---|---|
+| MCP-токен на CalDAV | `PROPFIND -u Blesk:tk_…` на `/dav/principals/Blesk/` → `{"message":"Unauthorized"}` — **не подходит**, нужен отдельный CalDAV-токен |
+| Токен CalDAV | ещё не создан (действие пользователя в Settings → CalDAV) |
+
+### Переименование и GitHub
+
+| Проверка | Результат |
+|---|---|
+| `mv tusur-schedule tusur-assistent` | git цел, `origin` на месте, история 4 коммита, фикстура по-прежнему даёт 3 события |
+| Абсолютные пути в коде | `grep` по `*.py` — нет ни `/home/…`, ни `~/opencode` |
+| Deploy key, чтение | `ssh -T git@github-z0den` → `Hi Z0DEN/tusur-schedule!` |
+| Репозиторий | `Z0DEN/tusur-schedule`, public, пустой, `has_pages: false` |
+| Push | **не делался** (по договорённости) |
