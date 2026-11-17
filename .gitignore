@@ -19,3 +19,7 @@ deadlines-state.json
 # данные Vikunja (личные задачи, вложения) — не в git
 db/
 files/
+
+# ветка publish (её видит GitHub Pages): внутренние документы остаются локально
+docs/
+AGENTS.md
