@@ -1,4 +1,4 @@
-# AGENTS.md — tusur-schedule
+# AGENTS.md — tusur-assistent
 
 Личный агент по учёбе в ТУСУРе: расписание, дедлайны, задания, материалы курсов,
 напоминания. Источники — публичный `timetable.tusur.ru` и СДО (`sdo.tusur.ru`,
@@ -51,7 +51,10 @@ push в `Z0DEN` требует отдельного ключа или `gh auth l
 
 ## Публикация
 
-- Репозиторий: `git@github.com:Z0DEN/tusur-schedule.git` (публичный; Pages на
+- **Локальная папка:** `~/opencode/tusur-assistent` (имя папки ни на что не влияет,
+  код не содержит абсолютных путей).
+- **Репозиторий:** `tusur-schedule` — имя на GitHub менять нельзя без смены URL
+  подписки в календаре (см. ниже). `git@github.com:Z0DEN/tusur-schedule.git` (публичный; Pages на
   приватном требуют Pro).
 - Доступ: **deploy key** `~/.ssh/z0den-tusur` (ed25519, без пароля, права 600),
   алиас в `~/.ssh/config` — `Host github-z0den`. Ключ repo-scoped, поэтому в

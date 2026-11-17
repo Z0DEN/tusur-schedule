@@ -144,7 +144,7 @@
 - **GitHub Pages** (единственный выбранный вариант): репозиторий `tusur-schedule`,
   файлы `schedule-735-1.ics`, `deadlines.ics` в корне ветки `main`, Pages =
   Deploy from a branch.
-- Ссылка подписки: `https://myxo42mop.github.io/tusur-schedule/schedule-735-1.ics`
+- Ссылка подписки: `https://z0den.github.io/tusur-schedule/schedule-735-1.ics`
   (постоянная; меняется содержимое, не адрес).
 - Обновление: локальный systemd-таймер каждые 6 часов + `git push`.
   GitHub Actions — как резерв (риск: IP датацентров могут быть недоступны для
