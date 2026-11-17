@@ -1,0 +1,458 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//tusur-schedule//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Расписание 735-1
+X-WR-TIMEZONE:Asia/Tomsk
+BEGIN:VTIMEZONE
+TZID:Asia/Tomsk
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+TZNAME:+07
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:688778-20261118T1315@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261118T131500
+DTEND;TZID=Asia/Tomsk:20261118T145000
+SUMMARY:ЭКЗ Теория вероятностей и математи
+ ческая статистика
+LOCATION:улк 310 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Экзамен\nПреподавате
+ ль: Шабля Юрий Васильевич\nГруппы: гр. 735-
+ 1\nКорпус: Учебно-лабораторный корпус\, у
+ л. Красноармейская\, 146\, ауд. 310
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЭКЗ Теория вероятностей и матема
+ тическая статистика
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:688779-20261118T1500@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261118T150000
+DTEND;TZID=Asia/Tomsk:20261118T163500
+SUMMARY:ЭКЗ Теория вероятностей и математи
+ ческая статистика
+LOCATION:улк 310 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Экзамен\nПреподавате
+ ль: Шабля Юрий Васильевич\nГруппы: гр. 735-
+ 1\nКорпус: Учебно-лабораторный корпус\, у
+ л. Красноармейская\, 146\, ауд. 310
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЭКЗ Теория вероятностей и матема
+ тическая статистика
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:688780-20261120T1040@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261120T104000
+DTEND;TZID=Asia/Tomsk:20261120T121500
+SUMMARY:ЗАЧ Численные методы
+LOCATION:улк 408 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Зачет\nПреподаватель
+ : Катаева Елена Сергеевна\nГруппы: гр. 735-
+ 1\nКорпус: Учебно-лабораторный корпус\, у
+ л. Красноармейская\, 146\, ауд. 408
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЗАЧ Численные методы
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:686973-20261123T1040@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261123T104000
+DTEND;TZID=Asia/Tomsk:20261123T121500
+SUMMARY:ПРАК Элективные дисциплины по физи
+ ческой культуре и спорту
+DESCRIPTION:Вид занятия: Практика\nПреподават
+ ель: Головчук О.О. \, Гужов Ф...\nГруппы: гр.
+  735-1
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Элективные дисциплины по фи
+ зической культуре и спорту
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689421-20261123T1315@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261123T131500
+DTEND;TZID=Asia/Tomsk:20261123T145000
+SUMMARY:ПРАК Физика
+LOCATION:улк 310 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Практика\nПреподават
+ ель: Бурачевский Юрий Александрович\nГр
+ уппы: гр. 735-1\nКорпус: Учебно-лабораторны
+ й корпус\, ул. Красноармейская\, 146\, ауд. 3
+ 10
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Физика
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689353-20261123T1500@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261123T150000
+DTEND;TZID=Asia/Tomsk:20261123T163500
+SUMMARY:ЛЕК Методы оптимизации
+LOCATION:улк 808 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Катаева Е.С.\nГруппы: гр. 735-1\nКорпус: Уч
+ ебно-лабораторный корпус\, ул. Красноар
+ мейская\, 146\, ауд. 808
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛЕК Методы оптимизации
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689360-20261124T1040@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261124T104000
+DTEND;TZID=Asia/Tomsk:20261124T121500
+SUMMARY:ПРАК Методы оптимизации
+LOCATION:улк 408 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Практика\nПреподават
+ ель: Катаева Елена Сергеевна\nГруппы: гр
+ . 735-1\nКорпус: Учебно-лабораторный корпу
+ с\, ул. Красноармейская\, 146\, ауд. 408
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Методы оптимизации
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689902-20261124T1315@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261124T131500
+DTEND;TZID=Asia/Tomsk:20261124T145000
+SUMMARY:ЛАБ Электроника и схемотехника
+LOCATION:улк 404 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лабораторная работа\
+ nПреподаватель: Мальчуков Андрей Никол
+ аевич\nГруппы: гр. 735-1\nКорпус: Учебно-лаб
+ ораторный корпус\, ул. Красноармейская\,
+  146\, ауд. 404
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛАБ Электроника и схемотехника
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689908-20261124T1500@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261124T150000
+DTEND;TZID=Asia/Tomsk:20261124T163500
+SUMMARY:ЛАБ Электроника и схемотехника
+LOCATION:улк 404 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лабораторная работа\
+ nПреподаватель: Мальчуков Андрей Никол
+ аевич\nГруппы: гр. 735-1\nКорпус: Учебно-лаб
+ ораторный корпус\, ул. Красноармейская\,
+  146\, ауд. 404
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛАБ Электроника и схемотехника
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689900-20261124T1645@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261124T164500
+DTEND;TZID=Asia/Tomsk:20261124T182000
+SUMMARY:СРС Физика
+LOCATION:улк 310 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Самостоятельная раб
+ ота\nПреподаватель: Бурачевский Юрий Ал
+ ександрович\nГруппы: гр. 735-1\nКорпус: Уче
+ бно-лабораторный корпус\, ул. Красноарм
+ ейская\, 146\, ауд. 310
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:СРС Физика
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:686998-20261125T1040@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261125T104000
+DTEND;TZID=Asia/Tomsk:20261125T121500
+SUMMARY:ПРАК Элективные дисциплины по физи
+ ческой культуре и спорту
+DESCRIPTION:Вид занятия: Практика\nПреподават
+ ель: Головчук О.О. \, Гужов Ф...\nГруппы: гр.
+  735-1
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Элективные дисциплины по фи
+ зической культуре и спорту
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689376-20261125T1315@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261125T131500
+DTEND;TZID=Asia/Tomsk:20261125T145000
+SUMMARY:ПРАК Методы оптимизации
+LOCATION:улк 408 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Практика\nПреподават
+ ель: Катаева Елена Сергеевна\nГруппы: гр
+ . 735-1\nКорпус: Учебно-лабораторный корпу
+ с\, ул. Красноармейская\, 146\, ауд. 408
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Методы оптимизации
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:686999-20261125T1500@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261125T150000
+DTEND;TZID=Asia/Tomsk:20261125T163500
+SUMMARY:ПРАК Иностранный язык
+LOCATION:улк 303 \, улк 407 \, улк 500... Учебно-лабо
+ раторный корпус
+DESCRIPTION:Вид занятия: Практика\nПреподават
+ ель: Войцеховская Н.Ю. \, Руб...\nГруппы: гр
+ . 735-1\nКорпус: Учебно-лабораторный корпу
+ с\, ул. Красноармейская\, 146\, ауд. 303
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Иностранный язык
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689381-20261125T1645@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261125T164500
+DTEND;TZID=Asia/Tomsk:20261125T182000
+SUMMARY:ЛЕК Электроника и схемотехника
+LOCATION:улк 808 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Мальчуков А.Н.\nГруппы: гр. 735-1\nКорпус: 
+ Учебно-лабораторный корпус\, ул. Красно
+ армейская\, 146\, ауд. 808
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛЕК Электроника и схемотехника
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689389-20261126T1040@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261126T104000
+DTEND;TZID=Asia/Tomsk:20261126T121500
+SUMMARY:ЛЕК Методы оптимизации
+LOCATION:улк 808 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Катаева Е.С.\nГруппы: гр. 735-1\nКорпус: Уч
+ ебно-лабораторный корпус\, ул. Красноар
+ мейская\, 146\, ауд. 808
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛЕК Методы оптимизации
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689391-20261126T1315@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261126T131500
+DTEND;TZID=Asia/Tomsk:20261126T145000
+SUMMARY:ЛЕК Физика
+LOCATION:улк 310 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Бурачевский Ю.А.\nГруппы: гр. 735-1\nКорпу
+ с: Учебно-лабораторный корпус\, ул. Крас
+ ноармейская\, 146\, ауд. 310
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛЕК Физика
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:687044-20261126T1500@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261126T150000
+DTEND;TZID=Asia/Tomsk:20261126T163500
+SUMMARY:ПРАК Цифровая кафедра
+DESCRIPTION:Вид занятия: Практика\nГруппы: гр. 
+ 735-1
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Цифровая кафедра
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:687043-20261126T1645@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261126T164500
+DTEND;TZID=Asia/Tomsk:20261126T182000
+SUMMARY:ПРАК Основы проектной деятельности
+DESCRIPTION:Вид занятия: Практика\nГруппы: гр. 
+ 735-1
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Основы проектной деятельнос
+ ти
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:687045-20261126T1830@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261126T183000
+DTEND;TZID=Asia/Tomsk:20261126T200500
+SUMMARY:ПРАК Цифровая кафедра
+DESCRIPTION:Вид занятия: Практика\nГруппы: гр. 
+ 735-1
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Цифровая кафедра
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689400-20261127T1315@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261127T131500
+DTEND;TZID=Asia/Tomsk:20261127T145000
+SUMMARY:ЛЕК Методы оптимизации
+LOCATION:улк 808 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Катаева Е.С.\nГруппы: гр. 735-1\nКорпус: Уч
+ ебно-лабораторный корпус\, ул. Красноар
+ мейская\, 146\, ауд. 808
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛЕК Методы оптимизации
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689402-20261127T1500@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261127T150000
+DTEND;TZID=Asia/Tomsk:20261127T163500
+SUMMARY:ЛЕК Методы оптимизации
+LOCATION:улк 808 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Катаева Е.С.\nГруппы: гр. 735-1\nКорпус: Уч
+ ебно-лабораторный корпус\, ул. Красноар
+ мейская\, 146\, ауд. 808
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛЕК Методы оптимизации
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:689404-20261127T1645@timetable.tusur.ru
+DTSTAMP:20261117T164526Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261127T164500
+DTEND;TZID=Asia/Tomsk:20261127T182000
+SUMMARY:ЛЕК Электроника и схемотехника
+LOCATION:улк 808 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Мальчуков А.Н.\nГруппы: гр. 735-1\nКорпус: 
+ Учебно-лабораторный корпус\, ул. Красно
+ армейская\, 146\, ауд. 808
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ЛЕК Электроника и схемотехника
+END:VALARM
+END:VEVENT
+END:VCALENDAR

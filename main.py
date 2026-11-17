@@ -5,6 +5,10 @@
   python3 main.py --fixture fixtures/735-1.html --group 735-1 --out /tmp/test.ics
   python3 main.py --group 735-1 --faculty fb --from-cache --out schedule-735-1.ics
 
+Для CI: `--state-from schedule-735-1.ics` (или без него — читается сам `--out`):
+SEQUENCE и DTSTAMP берутся из закоммиченного файла, поэтому повторный прогон на
+неизменных данных не меняет файл и не создаёт коммит.
+
 Вежливость к сайту: не больше одного запроса раз в --delay секунд (по умолчанию
 2.5), повторы с паузой, локальный кэш HTML — повторная сборка без сети.
 """
@@ -97,6 +101,8 @@ def main() -> int:
     ap.add_argument("--out", default=None)
     ap.add_argument("--cache-dir", default="cache")
     ap.add_argument("--state", default="state.json")
+    ap.add_argument("--state-from", metavar="ICS",
+                    help="читать SEQUENCE/DTSTAMP из готового .ics (для CI, где state.json нет)")
     ap.add_argument("--delay", type=float, default=2.5)
     ap.add_argument("--from-cache", action="store_true")
     args = ap.parse_args()
@@ -114,7 +120,8 @@ def main() -> int:
         lessons, _ = collect(args.group, args.faculty, args.weeks_ahead,
                              args.cache_dir, args.delay, args.from_cache)
 
-    ics = build_ics(lessons, args.group, state_path=args.state)
+    prev_ics = args.state_from or args.out
+    ics = build_ics(lessons, args.group, state_path=args.state, prev_ics=prev_ics)
     with open(out, "w", encoding="utf-8", newline="") as fh:
         fh.write(ics)
     print(f"готово: {out} — событий {len(lessons)}")

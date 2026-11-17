@@ -1,0 +1,74 @@
+# Расписание группы 735-1 → GitHub Pages.
+#
+# В облако уходит ТОЛЬКО расписание: дедлайны СДО, diff.json и план живут
+# локально (в них тексты заданий из закрытой СДО). Секретов у workflow нет.
+#
+# Крон 01:00 UTC = 08:00 по Томску. Задержка и пропуски крона для расписания
+# терпимы; после 60 дней без активности GitHub отключает scheduled workflow —
+# тогда помогает ручной workflow_dispatch или любой коммит в репозиторий.
+
+name: update-schedule
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-schedule
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Зависимости
+        run: pip install -r requirements.txt
+
+      - name: Сборка .ics
+        # --state-from: SEQUENCE и DTSTAMP читаются из закоммиченного файла,
+        # поэтому при неизменных данных файл остаётся побайтово тем же.
+        run: |
+          python3 main.py \
+            --group 735-1 \
+            --faculty fb \
+            --weeks-ahead 4 \
+            --delay 3 \
+            --out schedule-735-1.ics \
+            --state-from schedule-735-1.ics \
+            --state state.json
+
+      - name: Проверка файла
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          text = Path("schedule-735-1.ics").read_bytes()
+          assert text.startswith(b"BEGIN:VCALENDAR"), "не .ics"
+          assert text.count(b"BEGIN:VEVENT") == text.count(b"END:VEVENT"), "несбалансированные VEVENT"
+          assert b"\r\n" in text, "нет CRLF"
+          lines = text.split(b"\r\n")
+          long = [l for l in lines if len(l) > 75]
+          assert not long, f"строки длиннее 75 октетов: {len(long)}"
+          print("событий:", text.count(b"BEGIN:VEVENT"))
+          PY
+
+      - name: Коммит только при изменении
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add schedule-735-1.ics
+          if git diff --cached --quiet; then
+            echo "изменений нет — коммит не нужен"
+            exit 0
+          fi
+          git commit -m "schedule: обновление $(date -u +%F)"
+          git push

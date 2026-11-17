@@ -9,7 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 from parser import KIND_SHORT, Lesson
 
@@ -60,7 +60,53 @@ def _sequence(lesson: Lesson, state: dict) -> int:
     return int(prev.get("seq", 0))
 
 
-def build_ics(lessons: list[Lesson], group: str, state_path: str | None = None) -> str:
+def _unfold(text: str) -> str:
+    out: list[str] = []
+    for line in text.splitlines():
+        if line[:1] in (" ", "\t") and out:
+            out[-1] += line[1:]
+        else:
+            out.append(line)
+    return "\n".join(out)
+
+
+def parse_ics_state(text: str) -> dict[str, dict]:
+    """Состояние из готового .ics: uid → {sequence, dtstamp, payload}.
+
+    payload — строки события без `DTSTAMP` и `SEQUENCE`, отсортированные:
+    он и решает, переиспользовать ли `DTSTAMP` прошлого прогона (иначе файл
+    меняется каждый запуск и workflow коммитит пустоту).
+    """
+    events: dict[str, dict] = {}
+    block: list[str] | None = None
+    for line in _unfold(text).split("\n"):
+        head = line.strip().upper()
+        if head == "BEGIN:VEVENT":
+            block = []
+            continue
+        if head == "END:VEVENT":
+            if block:
+                uid = next((l[4:] for l in block if l.upper().startswith("UID:")), None)
+                if uid:
+                    payload = sorted(
+                        l for l in block
+                        if not l.upper().startswith(("DTSTAMP:", "SEQUENCE:")))
+                    seq = next((l[9:] for l in block
+                                if l.upper().startswith("SEQUENCE:")), "0")
+                    stamp = next((l[8:] for l in block
+                                  if l.upper().startswith("DTSTAMP:")), "")
+                    events[uid] = {"sequence": int(seq.strip() or 0),
+                                   "dtstamp": stamp.strip(),
+                                   "payload": tuple(payload)}
+            block = None
+            continue
+        if block is not None:
+            block.append(line)
+    return events
+
+
+def build_ics(lessons: list[Lesson], group: str, state_path: str | None = None,
+              prev_ics: str | None = None) -> str:
     state: dict = {}
     if state_path and os.path.exists(state_path):
         try:
@@ -68,7 +114,15 @@ def build_ics(lessons: list[Lesson], group: str, state_path: str | None = None) 
         except (OSError, ValueError):
             state = {}
 
-    stamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    prev: dict[str, dict] = {}
+    if prev_ics and os.path.exists(prev_ics):
+        try:
+            with open(prev_ics, encoding="utf-8", newline="") as fh:
+                prev = parse_ics_state(fh.read())
+        except (OSError, ValueError):
+            prev = {}
+
+    stamp_now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
@@ -98,22 +152,18 @@ def build_ics(lessons: list[Lesson], group: str, state_path: str | None = None) 
         if lesson.building:
             desc.append(f"Корпус: {lesson.building}")
 
-        lines += [
-            "BEGIN:VEVENT",
+        body = [
             f"UID:{lesson.uid}",
-            f"DTSTAMP:{stamp}",
             f"DTSTART;TZID=Asia/Tomsk:{lesson.start:%Y%m%dT%H%M%S}",
             f"DTEND;TZID=Asia/Tomsk:{lesson.end:%Y%m%dT%H%M%S}",
             f"SUMMARY:{_esc(_summary(lesson))}",
         ]
         location = " ".join(x for x in (lesson.room, lesson.building.split(",")[0]) if x)
         if location:
-            lines.append(f"LOCATION:{_esc(location)}")
+            body.append(f"LOCATION:{_esc(location)}")
         if desc:
-            lines.append(f"DESCRIPTION:{_esc(chr(10).join(desc))}")
-        seq = _sequence(lesson, state)
-        lines += [
-            f"SEQUENCE:{seq}",
+            body.append(f"DESCRIPTION:{_esc(chr(10).join(desc))}")
+        body += [
             "STATUS:CONFIRMED",
             "TRANSP:OPAQUE",
             "BEGIN:VALARM",
@@ -121,8 +171,22 @@ def build_ics(lessons: list[Lesson], group: str, state_path: str | None = None) 
             "ACTION:DISPLAY",
             f"DESCRIPTION:{_esc(_summary(lesson))}",
             "END:VALARM",
-            "END:VEVENT",
         ]
+
+        # SEQUENCE и DTSTAMP: состояние — сам .ics прошлого прогона.
+        seq = _sequence(lesson, state)
+        stamp = stamp_now
+        known = prev.get(lesson.uid)
+        if known is not None:
+            if tuple(sorted(body)) == known["payload"]:
+                # Содержимое не изменилось — файл должен остаться побайтово тем же.
+                seq = known["sequence"]
+                stamp = known["dtstamp"] or stamp_now
+            else:
+                seq = known["sequence"] + 1
+
+        lines += ["BEGIN:VEVENT", body[0], f"DTSTAMP:{stamp}", f"SEQUENCE:{seq}", *body[1:],
+                  "END:VEVENT"]
 
     lines.append("END:VCALENDAR")
     text = "\r\n".join(_fold(l) for l in lines) + "\r\n"

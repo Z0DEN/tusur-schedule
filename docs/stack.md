@@ -93,23 +93,22 @@ docs/implementation-plan.md
 docs/verified-facts.md
 docs/stack.md              этот файл
 parser.py                  страница группы → Lesson[] (мобильные таблицы + модалки)
-ics.py                     Lesson[] → iCalendar (VTIMEZONE +0700, VALARM, UID/SEQUENCE)
-main.py                    CLI: --fixture / --faculty / --weeks-ahead / --from-cache, кэш, паузы
+ics.py                     Lesson[] → iCalendar (VTIMEZONE +0700, VALARM, UID/SEQUENCE/DTSTAMP)
+main.py                    CLI: --fixture / --faculty / --weeks-ahead / --from-cache / --state-from
+feed.py                    ICS-фид СДО → state + diff.json + deadlines.md/.json
+tests/test_feed.py         тесты разбора фида на синтетической фикстуре
+.github/workflows/update.yml  крон 01:00 UTC (08:00 Томск) + workflow_dispatch, коммит только при диффе
 requirements.txt           beautifulsoup4
-.gitignore                 cache/, state.json, diff.json, fixtures/, db/, files/, *.url
+.gitignore                 cache/, state.json, diff.json, deadlines.*, db/, files/, *.url
 ```
 
 Git: ветка `main`, рабочее дерево чистое, ничего не запушено.
 
 ## 7. Чего ещё нет (важно не забыть)
 
-- Workflow `.github/workflows/update.yml` — не создан; генератор ещё не умеет
-  `--state-from` (SEQUENCE из закоммиченного `.ics`) и не переиспользует
-  `DTSTAMP` при неизменном содержимом.
-- `fixtures/` пока в `.gitignore` — решено закоммитить (публичная страница,
-  нужна для воспроизводимых проверок).
-- `deadlines.ics` / `schedule-735-1.ics` в репозитории — файлов пока нет.
-- Парсера фида СДО (`feed.py`) — нет.
+- Workflow написан, но **не запушен**: репозиторий `Z0DEN/tusur-schedule` пока
+  пуст, Pages не включён, `workflow_dispatch` не запускался.
+- `schedule-735-1.ics` собран локально из кэша (22 события) — в GitHub ещё не ушёл.
 - CalDAV-токена и проверки синхронизации с телефоном — нет.
 - Compose-файла, тега образа и Tailscale-URL — нет.
 - HTTPS и обратного прокси — нет (и не планируется, пока хватает Tailscale).
