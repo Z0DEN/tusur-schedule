@@ -74,6 +74,7 @@
 | Сборка | **GitHub Actions** (решение пользователя): workflow в облаке, локального `push` нет |
 | Workflow | **ещё не создан** — `.github/` в проекте отсутствует |
 | Секреты | authtoken фида СДО — в `Settings → Secrets`, в файлах не хранится |
+| Планирование задач | **ИИ раз в сутки** (`opencode run --agent tusur`), запись в Vikunja через MCP; результат проверяет `validate_plan.py` — не создан |
 | Проверено облако? | **нет**: неизвестно, пускает ли `timetable.tusur.ru` IP раннеров (Azure); проверяется первым `workflow_dispatch` |
 | Старый ключ | блок `Host github.com` ссылается на отсутствующий `matvey-github`; не мешает, push идёт через алиас |
 
