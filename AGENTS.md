@@ -49,6 +49,20 @@ push в `Z0DEN` требует отдельного ключа или `gh auth l
 - `.ics` валидировать разворотом свёрнутых строк, балансом `BEGIN/END:VEVENT`
   и пределом 75 октетов на строку.
 
+## Публикация
+
+- Репозиторий: `git@github.com:Z0DEN/tusur-schedule.git` (публичный; Pages на
+  приватном требуют Pro).
+- Доступ: **deploy key** `~/.ssh/z0den-tusur` (ed25519, без пароля, права 600),
+  алиас в `~/.ssh/config` — `Host github-z0den`. Ключ repo-scoped, поэтому в
+  remote используется алиас: `git@github-z0den:Z0DEN/tusur-schedule.git`.
+  В настройках deploy key включить **Allow write access**, иначе локальный push
+  .ics невозможен.
+- Pages: Settings → Pages → Deploy from a branch → `main` / `/`.
+- Итоговые ссылки подписки: `https://z0den.github.io/tusur-schedule/<файл>.ics`.
+- Старый ключ `~/.ssh/matvey-github` из блока `Host github.com` в конфиге
+  отсутствует (битая ссылка) — не мешает, так как push идёт через алиас.
+
 ## Правила
 
 - Не печатать и не коммитить токены, cookies, `sesskey`.
