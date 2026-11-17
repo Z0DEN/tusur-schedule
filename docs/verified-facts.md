@@ -135,3 +135,13 @@
 
 Не проверено: принимает ли Vikunja webhook на `127.0.0.1` (SSRF), можно ли выдать
 API-токену права на вебхуки, поведение при одновременной записи CalDAV + API.
+
+### Каталог действий Vikunja MCP (для варианта D)
+
+| Проверка | Результат |
+|---|---|
+| `find_action` (полный список) | **57 действий**: `tasks_*`, `task_labels_*`, `task_assignees_*`, `task_relations_*`, `task_attachments_list/delete`, `task_comments_*`, `projects_*`, `project_views_*`, `buckets_*`, `teams_*`, `filters_*`, `notifications_*`, `reactions_*` |
+| Создание вложений | **отсутствует** — только `task_attachments_list` и `task_attachments_delete` |
+| Напоминания | **отсутствуют** и в 27 инструментах, и в 57 действиях |
+| Учёт времени | отсутствует |
+| Вебхуки | отсутствуют; API-токен к `/api/v1/projects/1/webhooks` → `401` |

@@ -69,7 +69,7 @@
 | Репозиторий | `Z0DEN/tusur-schedule` — **public**, default `main`, пока пустой (size 0) |
 | Доступ | deploy key `~/.ssh/z0den-tusur` (ed25519, без пароля, 600), алиас `Host github-z0den`, `IdentitiesOnly yes`; в GitHub должен быть включён **Allow write access** |
 | Remote | `git@github-z0den:Z0DEN/tusur-schedule.git` |
-| Локальные коммиты | 4 штуки, **не запушены** |
+| Локальные коммиты | **не запушены** (число — `git rev-list --count HEAD`) |
 | Pages | не включён (`has_pages: false`) |
 | Сборка | **GitHub Actions** (решение пользователя): workflow в облаке, локального `push` нет |
 | Workflow | **ещё не создан** — `.github/` в проекте отсутствует |
@@ -78,8 +78,8 @@
 | Календарный вид задач | в Vikunja нет: только `list`, `gantt`, `table`, `kanban`; `VEVENT` не поддерживается |
 | Поля задачи | своих полей нет; в схеме `Task.json` нет `updated_by` — автор правки не определяется, см. `docs/vikunja-integration.md` |
 | Изменения задач | опрос по `updated` (проверено); вебхуки через API-токен → `401`, только UI |
-| Оценки трудоёмкости | строка `est=180 src=ai` в описании задачи (`src=user` — не трогать) |
-| Планирование задач | **ИИ раз в сутки** (`opencode run --agent tusur`), запись в Vikunja через MCP; результат проверяет `validate_plan.py` — не создан |
+| Оценки трудоёмкости | метка `est-3h` из лестницы `est-*`; строка в описании — резерв |
+| Планирование задач | **ИИ раз в сутки** (`opencode run --agent tusur`): обогащение задач через Vikunja MCP, слоты — только через `plan_apply` (наш MCP `tusur`); не создано |
 | Проверено облако? | **нет**: неизвестно, пускает ли `timetable.tusur.ru` IP раннеров (Azure); проверяется первым `workflow_dispatch` |
 | Старый ключ | блок `Host github.com` ссылается на отсутствующий `matvey-github`; не мешает, push идёт через алиас |
 
@@ -98,7 +98,7 @@ requirements.txt           beautifulsoup4
 .gitignore                 cache/, state.json, diff.json, fixtures/, db/, files/, *.url
 ```
 
-Git: ветка `main`, 4 коммита, рабочее дерево чистое.
+Git: ветка `main`, рабочее дерево чистое, ничего не запушено.
 
 ## 7. Чего ещё нет (важно не забыть)
 
