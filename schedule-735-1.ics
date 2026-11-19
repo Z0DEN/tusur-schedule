@@ -202,24 +202,23 @@ DESCRIPTION:ЛАБ Электроника и схемотехника
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:689900-20261124T1645@timetable.tusur.ru
-DTSTAMP:20261117T164526Z
+UID:691039-20261124T1830@timetable.tusur.ru
+DTSTAMP:20261119T082952Z
 SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261124T164500
-DTEND;TZID=Asia/Tomsk:20261124T182000
-SUMMARY:СРС Физика
-LOCATION:улк 310 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Самостоятельная раб
- ота\nПреподаватель: Бурачевский Юрий Ал
- ександрович\nГруппы: гр. 735-1\nКорпус: Уче
- бно-лабораторный корпус\, ул. Красноарм
- ейская\, 146\, ауд. 310
+DTSTART;TZID=Asia/Tomsk:20261124T183000
+DTEND;TZID=Asia/Tomsk:20261124T200500
+SUMMARY:КУРС Основы программирования
+LOCATION:улк 405 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Курсовая работа\nПре
+ подаватель: Уразаев Дамир Раисович\nГру
+ ппы: гр. 735-1\nКорпус: Учебно-лабораторный
+  корпус\, ул. Красноармейская\, 146\, ауд. 405
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:СРС Физика
+DESCRIPTION:КУРС Основы программирования
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -301,6 +300,26 @@ BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
 DESCRIPTION:ЛЕК Электроника и схемотехника
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:691060-20261125T1830@timetable.tusur.ru
+DTSTAMP:20261119T082952Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261125T183000
+DTEND;TZID=Asia/Tomsk:20261125T200500
+SUMMARY:КУРС Основы программирования
+LOCATION:улк 405 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Курсовая работа\nПре
+ подаватель: Уразаев Дамир Раисович\nГру
+ ппы: гр. 735-1\nКорпус: Учебно-лабораторный
+  корпус\, ул. Красноармейская\, 146\, ауд. 405
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:КУРС Основы программирования
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -660,6 +679,26 @@ DESCRIPTION:ЛЕК Электроника и схемотехника
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:691046-20261202T1830@timetable.tusur.ru
+DTSTAMP:20261119T082952Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261202T183000
+DTEND;TZID=Asia/Tomsk:20261202T200500
+SUMMARY:КУРС Основы программирования
+LOCATION:улк 407 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Курсовая работа\nПре
+ подаватель: Уразаев Дамир Раисович\nГру
+ ппы: гр. 735-1\nКорпус: Учебно-лабораторный
+  корпус\, ул. Красноармейская\, 146\, ауд. 407
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:КУРС Основы программирования
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:690104-20261203T1040@timetable.tusur.ru
 DTSTAMP:20261117T165705Z
 SEQUENCE:0
@@ -760,44 +799,23 @@ DESCRIPTION:КУРС Основы программирования
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:690413-20261209T2015@timetable.tusur.ru
-DTSTAMP:20261118T081908Z
-SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261209T201500
-DTEND;TZID=Asia/Tomsk:20261209T215000
-SUMMARY:ЛЕК Электроника и схемотехника
-LOCATION:улк 401 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Лекция\nПреподавател
- ь: Мальчуков А.Н.\nГруппы: гр. 735-1\nКорпус: 
- Учебно-лабораторный корпус\, ул. Красно
- армейская\, 146\, ауд. 401
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:ЛЕК Электроника и схемотехника
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:690600-20261214T1315@timetable.tusur.ru
-DTSTAMP:20261118T081908Z
-SEQUENCE:0
+DTSTAMP:20261119T082952Z
+SEQUENCE:1
 DTSTART;TZID=Asia/Tomsk:20261214T131500
 DTEND;TZID=Asia/Tomsk:20261214T145000
-SUMMARY:ПРАК Физика
-LOCATION:улк 403 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Практика\nПреподават
- ель: Бурачевский Юрий Александрович\nГр
- уппы: гр. 735-1\nКорпус: Учебно-лабораторны
- й корпус\, ул. Красноармейская\, 146\, ауд. 4
- 03
+SUMMARY:ЛЕК Физика
+LOCATION:улк 303 Учебно-лабораторный корпус
+DESCRIPTION:Вид занятия: Лекция\nПреподавател
+ ь: Бурачевский Ю.А.\nГруппы: гр. 735-1\nКорпу
+ с: Учебно-лабораторный корпус\, ул. Крас
+ ноармейская\, 146\, ауд. 303
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:ПРАК Физика
+DESCRIPTION:ЛЕК Физика
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -883,26 +901,6 @@ DESCRIPTION:ЛАБ Электроника и схемотехника
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:690638-20261216T1315@timetable.tusur.ru
-DTSTAMP:20261118T081908Z
-SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261216T131500
-DTEND;TZID=Asia/Tomsk:20261216T145000
-SUMMARY:ПРАК Иностранный язык
-LOCATION:улк 407 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Практика\nПреподават
- ель: Войцеховская Н.Ю.\nГруппы: гр. 735-1\nКо
- рпус: Учебно-лабораторный корпус\, ул. К
- расноармейская\, 146\, ауд. 407
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:ПРАК Иностранный язык
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:690643-20261216T1645@timetable.tusur.ru
 DTSTAMP:20261118T081908Z
 SEQUENCE:0
@@ -943,43 +941,23 @@ DESCRIPTION:КУРС Основы программирования
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:690650-20261217T1315@timetable.tusur.ru
-DTSTAMP:20261118T081908Z
+UID:691124-20261217T1315@timetable.tusur.ru
+DTSTAMP:20261119T082952Z
 SEQUENCE:0
 DTSTART;TZID=Asia/Tomsk:20261217T131500
 DTEND;TZID=Asia/Tomsk:20261217T145000
-SUMMARY:ЛЕК Физика
-LOCATION:улк 310 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Лекция\nПреподавател
- ь: Бурачевский Ю.А.\nГруппы: гр. 735-1\nКорпу
- с: Учебно-лабораторный корпус\, ул. Крас
- ноармейская\, 146\, ауд. 310
+SUMMARY:ЛАБ Физика
+LOCATION:ф 219 Корпус ФЭТ
+DESCRIPTION:Вид занятия: Лабораторная работа\
+ nПреподаватель: Немирович-Данченко Люб
+ овь Юрьевна\nГруппы: гр. 735-1\nКорпус: Корп
+ ус ФЭТ\, ул. Вершинина\, 74\, ауд. 219
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:ЛЕК Физика
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:690659-20261218T1315@timetable.tusur.ru
-DTSTAMP:20261118T081908Z
-SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261218T131500
-DTEND;TZID=Asia/Tomsk:20261218T145000
-SUMMARY:ЛЕК Методы оптимизации
-LOCATION:улк 808 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Лекция\nПреподавател
- ь: Катаева Е.С.\nГруппы: гр. 735-1\nКорпус: Уч
- ебно-лабораторный корпус\, ул. Красноар
- мейская\, 146\, ауд. 808
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:ЛЕК Методы оптимизации
+DESCRIPTION:ЛАБ Физика
 END:VALARM
 END:VEVENT
 END:VCALENDAR
