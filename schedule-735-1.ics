@@ -15,70 +15,6 @@ TZNAME:+07
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:688778-20261118T1315@timetable.tusur.ru
-DTSTAMP:20261117T164526Z
-SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261118T131500
-DTEND;TZID=Asia/Tomsk:20261118T145000
-SUMMARY:ЭКЗ Теория вероятностей и математи
- ческая статистика
-LOCATION:улк 310 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Экзамен\nПреподавате
- ль: Шабля Юрий Васильевич\nГруппы: гр. 735-
- 1\nКорпус: Учебно-лабораторный корпус\, у
- л. Красноармейская\, 146\, ауд. 310
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:ЭКЗ Теория вероятностей и матема
- тическая статистика
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:688779-20261118T1500@timetable.tusur.ru
-DTSTAMP:20261117T164526Z
-SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261118T150000
-DTEND;TZID=Asia/Tomsk:20261118T163500
-SUMMARY:ЭКЗ Теория вероятностей и математи
- ческая статистика
-LOCATION:улк 310 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Экзамен\nПреподавате
- ль: Шабля Юрий Васильевич\nГруппы: гр. 735-
- 1\nКорпус: Учебно-лабораторный корпус\, у
- л. Красноармейская\, 146\, ауд. 310
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:ЭКЗ Теория вероятностей и матема
- тическая статистика
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:688780-20261120T1040@timetable.tusur.ru
-DTSTAMP:20261117T164526Z
-SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261120T104000
-DTEND;TZID=Asia/Tomsk:20261120T121500
-SUMMARY:ЗАЧ Численные методы
-LOCATION:улк 408 Учебно-лабораторный корпус
-DESCRIPTION:Вид занятия: Зачет\nПреподаватель
- : Катаева Елена Сергеевна\nГруппы: гр. 735-
- 1\nКорпус: Учебно-лабораторный корпус\, у
- л. Красноармейская\, 146\, ауд. 408
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:ЗАЧ Численные методы
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:691139-20261123T0850@timetable.tusur.ru
 DTSTAMP:20261120T081143Z
 SEQUENCE:0
@@ -738,6 +674,24 @@ BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
 DESCRIPTION:ЛЕК Физика
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:688001-20261203T1645@timetable.tusur.ru
+DTSTAMP:20261123T084140Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261203T164500
+DTEND;TZID=Asia/Tomsk:20261203T182000
+SUMMARY:ПРАК Основы проектной деятельности
+DESCRIPTION:Вид занятия: Практика\nГруппы: гр. 
+ 735-1
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Основы проектной деятельнос
+ ти
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
