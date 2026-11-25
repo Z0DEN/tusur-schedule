@@ -715,27 +715,6 @@ DESCRIPTION:ЛЕК Методы оптимизации
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:688411-20261204T1500@timetable.tusur.ru
-DTSTAMP:20261120T081143Z
-SEQUENCE:0
-DTSTART;TZID=Asia/Tomsk:20261204T150000
-DTEND;TZID=Asia/Tomsk:20261204T163500
-SUMMARY:ПРАК Иностранный язык
-LOCATION:улк 303 \, улк 310 \, улк 400... Учебно-лабо
- раторный корпус
-DESCRIPTION:Вид занятия: Практика\nПреподават
- ель: Войцеховская Н.Ю. \, Руб...\nГруппы: гр
- . 735-1\nКорпус: Учебно-лабораторный корпу
- с\, ул. Красноармейская\, 146\, ауд. 303
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:ПРАК Иностранный язык
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:690425-20261209T1645@timetable.tusur.ru
 DTSTAMP:20261118T081908Z
 SEQUENCE:0
@@ -996,6 +975,27 @@ BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
 DESCRIPTION:ЛАБ Физика
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:688411-20261218T1500@timetable.tusur.ru
+DTSTAMP:20261125T093948Z
+SEQUENCE:0
+DTSTART;TZID=Asia/Tomsk:20261218T150000
+DTEND;TZID=Asia/Tomsk:20261218T163500
+SUMMARY:ПРАК Иностранный язык
+LOCATION:улк 310 \, улк 400 Учебно-лабораторный 
+ корпус
+DESCRIPTION:Вид занятия: Практика\nПреподават
+ ель: Войцеховская Н.Ю. \, Руб...\nГруппы: гр
+ . 735-1\nКорпус: Учебно-лабораторный корпу
+ с\, ул. Красноармейская\, 146\, ауд. 310
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:ПРАК Иностранный язык
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
